@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+  <title id="title">Kizuna</title>
+  <desc id="desc">An anime inspired night scene with a crescent moon, falling cherry blossoms, a quiet skyline and a windswept character watching the city.</desc>
+  <defs>
+    <linearGradient id="sky" x2="1" y2="1">
+      <stop stop-color="#101227"/>
+      <stop offset=".6" stop-color="#272342"/>
+      <stop offset="1" stop-color="#594167"/>
+    </linearGradient>
+    <linearGradient id="coat" x2="1" y2="1">
+      <stop stop-color="#27253e"/>
+      <stop offset="1" stop-color="#131628"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#ffe5e9" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#ffe5e9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="windows" width="25" height="34" patternUnits="userSpaceOnUse">
+      <rect x="7" y="8" width="4" height="9" fill="#f4c7be" opacity=".28"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="380" rx="18" fill="url(#sky)"/>
+  <circle cx="952" cy="107" r="154" fill="url(#glow)"/>
+  <circle cx="964" cy="90" r="43" fill="#f9dce1"/>
+  <circle cx="979" cy="76" r="41" fill="#302844"/>
+  <g fill="#f3ddeb" opacity=".65">
+    <circle cx="780" cy="65" r="1.4"/><circle cx="1093" cy="114" r="1"/>
+    <circle cx="706" cy="123" r="1"/><circle cx="877" cy="37" r="1"/>
+    <circle cx="1145" cy="53" r="1.4"/><circle cx="556" cy="43" r="1"/>
+    <circle cx="72" cy="77" r="1.4"/><circle cx="658" cy="70" r="1.4"/>
+  </g>
+  <path d="M620 283h36v-68h37v29h24v-89h39v40h34v-70h4v70h20v74h31v-48h43v62h20v-88h48v36h24v-69h43v67h29v-18h40v53h28v-79h33v-20h7v20h33v106h32v-50h51v99H620Z" fill="#181a30"/>
+  <path d="M620 283h36v-68h37v29h24v-89h39v40h34v74h55v-48h43v62h20v-88h48v36h24v-69h43v67h29v-18h40v53h28v-79h73v106h32v-50h51v99H620Z" fill="url(#windows)"/>
+  <path d="M0 343Q250 323 446 342T800 336T1200 329V380H0Z" fill="#111425"/>
+  <g transform="translate(853 150)">
+    <path d="M16 193l5-74 13-23 48-5 33 31 19 75Z" fill="url(#coat)" stroke="#766077" stroke-width="1.5"/>
+    <path d="M48 83l-5 25 28 15 15-18-20-28Z" fill="#e4b8b8"/>
+    <path d="M32 44Q30 10 60 5q35-2 43 34l-3 34-17 25-21 4-25-27Z" fill="#f0c6c4"/>
+    <path d="M27 68L16 50l15 3-12-25 18 8L31 9l18 11L58-7l11 23 24-11-5 15 24 4-10 13 21 11-23 7-10 28-7-35-13 16-3-28-17 26-4-22-12 26-1 15Z" fill="#151c31"/>
+    <path d="M87 62l10 3-8 5" fill="none" stroke="#7d4c67" stroke-width="2"/>
+    <path d="M69 62l10-2" stroke="#483547" stroke-width="2"/>
+    <path d="M78 64v4" stroke="#7b799f" stroke-width="3"/>
+    <path d="M74 85l12-2" stroke="#b47d8c" stroke-width="1.5"/>
+    <path d="M33 99l25 16 25-16 13 12-34 19-32-15Z" fill="#b4718d"/>
+    <path d="M85 110q50 1 74-24-14 42-65 43Z" fill="#b4718d"/>
+    <path d="M38 135l-7 61m61-61 20 61M60 139v55" stroke="#5c4d69" stroke-width="2" fill="none"/>
+  </g>
+  <g fill="#e7a8c9" opacity=".8">
+    <path d="M736 169q12-14 19-2-4 13-19 2Z"/>
+    <path d="M1081 210q14-9 17 3-9 11-17-3Z"/>
+    <path d="M628 251q8-10 13-1-5 9-13 1Z"/>
+    <path d="M1056 43q13-10 17 2-7 10-17-2Z"/>
+    <path d="M493 88q10-9 13 1-6 9-13-1Z"/>
+  </g>
+  <path d="M46 116h35" stroke="#eab3cb" stroke-width="3"/>
+  <text x="47" y="164" fill="#eab3cb" font-family="Consolas, monospace" font-size="13" letter-spacing="5">FOR THE BOT YOU'RE BUILDING</text>
+  <text x="42" y="250" fill="#fff4f5" font-family="Segoe UI, sans-serif" font-size="88" font-weight="700" letter-spacing="-3">kizuna</text>
+  <text x="47" y="287" fill="#c4b6d5" font-family="Segoe UI, sans-serif" font-size="20">Less setup. More late-night ideas.</text>
+  <text x="48" y="345" fill="#9d8eaf" font-family="Consolas, monospace" font-size="12" letter-spacing="3">PYTHON / DISCORD / TERMINAL</text>
+</svg>

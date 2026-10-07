@@ -1,0 +1,8 @@
+import discord
+from discord.ext import commands
+
+
+async def create_bot() -> commands.Bot:
+    bot = commands.Bot(command_prefix=commands.when_mentioned, intents=discord.Intents.none())
+    await bot.load_extension("bot.cogs.ping")
+    return bot

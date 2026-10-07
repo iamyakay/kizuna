@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kizuna-discord"
+version = "0.1.0"
+description = "A terminal toolkit for building and managing discord.py bots."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Zap" }]
+keywords = ["discord", "discord.py", "cli", "bot", "developer-tools"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Framework :: AsyncIO",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = ["discord.py>=2.6,<3", "python-dotenv>=1,<2"]
+
+[project.urls]
+Repository = "https://github.com/iamyakay/kizuna"
+Issues = "https://github.com/iamyakay/kizuna/issues"
+Documentation = "https://github.com/iamyakay/kizuna#readme"
+
+[project.optional-dependencies]
+dev = ["ruff>=0.11,<1", "build>=1,<2"]
+
+[project.scripts]
+kizuna = "kizuna.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kizuna = ["py.typed", "templates/bot/*.tmpl"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B"]

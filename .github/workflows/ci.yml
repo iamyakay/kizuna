@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.11', '3.12', '3.13', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e ".[dev]"
+      - run: python -c "from discord import app_commands; from kizuna.cli import main"
+      - run: python -m unittest discover -s tests -v
+      - run: python -m ruff check .
+      - run: python -m build
+      - name: Install wheel in a clean environment
+        shell: bash
+        run: |
+          python -m venv wheel-check
+          if [ "$RUNNER_OS" = "Windows" ]; then
+            py="wheel-check/Scripts/python.exe"
+          else
+            py="wheel-check/bin/python"
+          fi
+          "$py" -m pip install dist/*.whl
+          "$py" -m kizuna --version
+          "$py" -m kizuna init wheel-bot
+          "$py" -m kizuna doctor --project wheel-bot --json
+          "$py" -m kizuna commands list --project wheel-bot --json
+          "$py" -m pip install -e wheel-bot
+          "$py" -m unittest discover -s wheel-bot/tests -v

@@ -1,0 +1,22 @@
+import asyncio
+import logging
+import os
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+from bot.app import create_bot
+
+
+async def main() -> None:
+    load_dotenv(Path(__file__).resolve().parents[2] / ".env", interpolate=False)
+    token = os.environ.get("DISCORD_TOKEN", "").strip()
+    if not token:
+        raise SystemExit("Set DISCORD_TOKEN in your environment or project .env.")
+    async with await create_bot() as bot:
+        await bot.start(token)
+
+
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    asyncio.run(main())

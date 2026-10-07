@@ -1,0 +1,9 @@
+import unittest
+
+from bot.app import create_bot
+
+
+class BotTests(unittest.IsolatedAsyncioTestCase):
+    async def test_ping_is_registered(self):
+        async with await create_bot() as bot:
+            self.assertIsNotNone(bot.tree.get_command("ping"))

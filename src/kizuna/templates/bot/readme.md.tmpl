@@ -1,0 +1,30 @@
+# {{name}}
+
+A discord.py bot created with Kizuna.
+
+## Setup
+
+Use Python 3.11 or newer in a virtual environment.
+
+```text
+python -m pip install -e .
+```
+
+Copy `.env.example` to `.env` and set your bot token. Install the bot in a test server through the Discord Developer Portal with the `bot` and `applications.commands` scopes.
+
+With Kizuna installed in the same environment:
+
+```text
+kizuna doctor
+kizuna commands diff --guild YOUR_GUILD_ID
+kizuna commands sync --guild YOUR_GUILD_ID --apply
+python -m bot
+```
+
+Replace `YOUR_GUILD_ID` with your test server ID. Guild deployment copies the global definitions into that guild. To register commands globally, use `--global` instead.
+
+Run the bot from this source checkout using the editable install. Add cogs under `src/bot/cogs/` and load them in `create_bot`. The factory must return the fully configured bot without starting it or syncing commands. This lets Kizuna inspect the same definitions used at runtime.
+
+```text
+python -m unittest discover -s tests -v
+```
