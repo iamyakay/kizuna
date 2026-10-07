@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+
+- Resolve temporary directory paths in configuration tests so Windows short paths compare correctly.
+- Read the CLI's expected version from the package in tests.
+
 ## 0.1.0
 
 - Add a discord.py project generator with separate application and cog modules.

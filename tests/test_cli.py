@@ -7,6 +7,8 @@ import unittest
 from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 
+from kizuna import __version__
+
 try:
     version("discord.py")
 except PackageNotFoundError:
@@ -37,7 +39,7 @@ class CliTests(unittest.TestCase):
     def test_version(self):
         result = self.cli("--version")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("0.1.0", result.stdout)
+        self.assertEqual(result.stdout.strip(), f"kizuna {__version__}")
 
     def test_init_json_and_existing_path_error(self):
         result = self.cli("init", self.project, "--json")
