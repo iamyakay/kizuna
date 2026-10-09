@@ -181,7 +181,7 @@ python -m unittest discover -s tests -v
 python -m ruff check .
 python -m build
 ```
-v
+
 Tests use local fixtures and mocked Discord responses. No real bot token is needed. The GitHub Actions workflow runs the suite on Windows and Linux with Python 3.11 through 3.14, then checks wheel installation and scaffold generation.
 
 Read [configuration](docs/configuration.md), [command syncing](docs/command-sync.md), and [contributing](CONTRIBUTING.md) for details. The current release does not support command translators; comparisons also leave application-level context and installation defaults unmanaged unless explicitly set in code.
